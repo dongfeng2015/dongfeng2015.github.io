@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101820" />
+    <meta
+      name="description"
+      content="Résumé of Dong Feng — Technical Product Manager. Vendor integrations and API platforms at Bankjoy, EHR integration at Epic Systems, plus four self-built products."
+    />
+    <title>Dong Feng — Résumé</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="resume.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#resume">Skip to content</a>
+
+    <div class="toolbar no-print">
+      <a class="toolbar-back" href="index.html"><span aria-hidden="true">←</span> Portfolio</a>
+      <div class="toolbar-actions">
+        <button class="button button-primary" type="button" data-print>
+          Save as PDF <span aria-hidden="true">↓</span>
+        </button>
+        <a class="button button-quiet" href="mailto:fengdong@umich.edu">Email me</a>
+      </div>
+    </div>
+
+    <main class="sheet" id="resume">
+      <header class="masthead">
+        <div>
+          <h1>Dong Feng</h1>
+          <p class="title">Technical Product Manager — integrations, API platforms, and 0→1 products</p>
+        </div>
+        <ul class="contact-block">
+          <li>New York, NY</li>
+          <li><a href="mailto:fengdong@umich.edu">fengdong@umich.edu</a></li>
+          <li><a href="https://dongfeng2015.github.io/">dongfeng2015.github.io</a></li>
+          <li><a href="https://github.com/dongfeng2015">github.com/dongfeng2015</a></li>
+        </ul>
+      </header>
+
+      <section class="summary" aria-label="Summary">
+        <p>
+          Technical product manager with six years in regulated industries where the integration <em>is</em> the product — fintech open banking at Bankjoy, clinical data integration at Epic. I own roadmaps, write the requirements, test the API, and translate architecture for the people who sign off on it. Outside work I build and ship my own products end to end, verification systems included.
+        </p>
+      </section>
+
+      <div class="columns">
+        <div class="col-main">
+          <section aria-labelledby="exp-title">
+            <h2 id="exp-title">Experience</h2>
+
+            <article class="role">
+              <div class="role-head">
+                <h3>Technical Product Manager II</h3>
+                <p class="role-when">Nov 2024 — Present</p>
+              </div>
+              <p class="role-org">Bankjoy · Digital banking platform</p>
+              <ul>
+                <li>Own two product roadmaps on the Open API Platform, converting external customer needs into internal product requirements; manage and mentor team members across both.</li>
+                <li>Directed delivery of a custom authentication integration for the company's largest client, aligned to enterprise integration standards.</li>
+                <li>Drove interoperability improvements against FDX standards; ran hands-on API testing in Postman through build and validation.</li>
+                <li>Communicate architecture-level detail to non-technical stakeholders; partner directly with architects and principal engineers on design.</li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-head">
+                <h3>Vendor Integrations Product Manager</h3>
+                <p class="role-when">Jul 2023 — Nov 2024</p>
+              </div>
+              <p class="role-org">Bankjoy</p>
+              <ul>
+                <li>Launched four major products — Plaid integrations, Card API features, Intuit Direct Connect — plus a run of smaller interoperability features.</li>
+                <li>Maintained <strong>100+ integrations</strong> as subject-matter expert, converting one-off work into scalable, repeatable tooling.</li>
+                <li>Took on QA for new development, holding integration architecture to FDIC and CFPB requirements.</li>
+                <li>Reviewed third-party integration proposals and demos against technical and customer-workflow specifications.</li>
+                <li>Established the standard for product design documents and led technical integration calls on SSO and API strategy — <strong>sprint bugs down 50%</strong>.</li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-head">
+                <h3>Implementation Engineer</h3>
+                <p class="role-when">Mar 2022 — Sep 2023</p>
+              </div>
+              <p class="role-org">Bankjoy</p>
+              <ul>
+                <li>Customized branding, styling, and survey interfaces for Loan and Account Opening applications in JavaScript across client integrations.</li>
+                <li>Ran multiple concurrent implementations against regulatory and compliance standards; documented workflows and trained cross-functional teams.</li>
+                <li>Broke down complex technical requirements in pre-sales discussions — <strong>engineering review issues down 75%</strong>.</li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-head">
+                <h3>Electronic Data Integration Engineer</h3>
+                <p class="role-when">Feb 2020 — Feb 2022</p>
+              </div>
+              <p class="role-org">Epic Systems · Healthcare software</p>
+              <ul>
+                <li>Integration project manager for outpatient, cardiology, and laboratory implementations at multi-billion-dollar health systems.</li>
+                <li>Supported third-party integrations into Epic products across TCP/IP, web services, and healthcare data standards including FHIR.</li>
+                <li>Worked with project executives to select integration strategies and streamline clinical workflows.</li>
+                <li>Built SQL and Python reporting that made support operations measurable; led demos and wrote the integration playbooks support teams reused.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section aria-labelledby="products-title" class="products">
+            <h2 id="products-title">Selected products built</h2>
+
+            <article class="product">
+              <div class="role-head">
+                <h3>Stickfall — real-time game with deterministic netcode</h3>
+                <p class="role-when">2026</p>
+              </div>
+              <p>
+                Rebuilt a Flash-era arcade game as a single self-contained web build with friends-only online play — lockstep determinism over WebRTC with stateless signalling, so there is no game server to operate. Delivery runs as a self-rescheduling autonomous build loop that advances one phase, verifies it, and files an owner-facing report each run.
+              </p>
+              <p class="metrics">
+                <span>66/66 release-gate steps green</span><span>122 tests passing</span><span>200 chaos-tested matches</span><span>10,000-case fuzz</span><span>272 KB single-file build</span>
+              </p>
+            </article>
+
+            <article class="product">
+              <div class="role-head">
+                <h3>FourFriends — social discovery, mobile + web + venue tools</h3>
+                <p class="role-when">2025 — present</p>
+              </div>
+              <p>
+                Product direction across five coordinated surfaces: mobile flows, matching backend, group confirmation and chat, venue portals, and operator tooling. A system review found blocked and reported users were filtered from the backfill path but not from primary matching — a safety gap shipped as a one-clause fix ahead of the rest of the plan. Delivered a 28-finding UX audit with AA accessibility in the launch criteria.
+              </p>
+            </article>
+
+            <article class="product">
+              <div class="role-head">
+                <h3>KeepUp — lifting journal (React Native · Go · Postgres)</h3>
+                <p class="role-when">2025 — present</p>
+              </div>
+              <p>
+                Local-first habit loop with a hosted MVP. Collapsed three competing sign-in surfaces into one contextual prompt fired at the moments that actually need identity, caught body text at 3.77:1 contrast and specified the WCAG AA fix, and re-scored the launch phase around real blockers rather than finished work.
+              </p>
+            </article>
+
+            <article class="product">
+              <div class="role-head">
+                <h3>Quant Analysis — governed investment research platform</h3>
+                <p class="role-when">2026</p>
+              </div>
+              <p>
+                Shaping a sprawling automation stack into a measurable analyst platform: decision ledgers, reconciliation, source controls, and reporting, with explicit human owner gates so nothing advances on an agent's say-so.
+              </p>
+            </article>
+          </section>
+        </div>
+
+        <aside class="col-side">
+          <section aria-labelledby="skills-title">
+            <h2 id="skills-title">Skills</h2>
+            <div class="skill-group">
+              <h4>Languages</h4>
+              <p>Go · TypeScript / JavaScript · C# · SQL · Python</p>
+            </div>
+            <div class="skill-group">
+              <h4>Integration &amp; platform</h4>
+              <p>Open API platforms · OAuth &amp; SSO · FDX · FHIR · Plaid · Intuit Direct Connect · Card APIs · REST &amp; OpenAPI</p>
+            </div>
+            <div class="skill-group">
+              <h4>Product</h4>
+              <p>Roadmapping · requirements &amp; design docs · market research · QA ownership · Agile · JIRA · stakeholder communication</p>
+            </div>
+            <div class="skill-group">
+              <h4>Regulated delivery</h4>
+              <p>FDIC · CFPB · healthcare data standards · audit-ready documentation</p>
+            </div>
+            <div class="skill-group">
+              <h4>Build &amp; operate</h4>
+              <p>React &amp; React Native · Postgres · GitHub workflows · CI and acceptance gates · WCAG review</p>
+            </div>
+            <div class="skill-group">
+              <h4>AI orchestration</h4>
+              <p>Multi-agent planning · model routing · scheduled autonomous runs · human owner gates · evidence-based review</p>
+            </div>
+          </section>
+
+          <section aria-labelledby="edu-title">
+            <h2 id="edu-title">Education</h2>
+            <div class="edu">
+              <p class="edu-school">University of Michigan</p>
+              <p class="edu-degree">BSE, Mechanical Engineering — 2019</p>
+              <p class="edu-degree">BSE, Chemical Engineering — 2019</p>
+            </div>
+          </section>
+
+          <section aria-labelledby="wins-title">
+            <h2 id="wins-title">Selected results</h2>
+            <ul class="wins">
+              <li><strong>15+ features launched</strong>, contributing to a 100%+ increase in expansion deals.</li>
+              <li><strong>10 concurrent projects</strong> and two product streams managed, reducing staffing need by one headcount.</li>
+              <li><strong>Two 0→1 programs</strong> plus two major expansions, including integrating a third-party fintech into the platform.</li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="vol-title">
+            <h2 id="vol-title">Volunteering</h2>
+            <div class="vol">
+              <p class="vol-org">Friends of Tompkins Square Park <span>2024 — present</span></p>
+              <p>Park restoration and planting; leading teams of 5+ volunteers.</p>
+            </div>
+            <div class="vol">
+              <p class="vol-org">Michigan Youth Leadership <span>2015 — 2023</span></p>
+              <p>Director of Group Facilitators, then Director of Facilities — onboarded 15+ facilitators in a single day and ran accommodations and programming for 350+ attendees on a non-profit budget.</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="sheet-footer">
+        <span>Dong Feng · New York, NY</span>
+        <span>dongfeng2015.github.io</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+/* ============================================================
+   Dong Feng — résumé sheet
+   Screen: a document sitting on the portfolio's paper.
+   Print: two clean pages, ATS-friendly text order.
+   ============================================================ */
+
+:root {
+  --ink: #101820;
+  --ink-soft: #26323b;
+  --paper: #e9e7e1;
+  --white: #ffffff;
+  --line: #d5d2ca;
+  --line-strong: #101820;
+  --muted: #545f67;
+  --mint: #a8f0cf;
+  --mint-deep: #0b5c45;
+  --orange: #ff6b35;
+  --blue: #2450cf;
+
+  --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0 20px 80px;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+p { margin: 0; }
+
+.skip-link {
+  position: fixed; left: 16px; top: -60px; z-index: 100;
+  padding: 12px 16px; background: var(--mint); color: var(--ink); font-weight: 800;
+}
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+/* ---------- toolbar ---------- */
+.toolbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  max-width: 940px; margin: 0 auto; padding: 18px 0;
+  background: var(--paper);
+}
+.toolbar-back { font-family: var(--mono); font-size: 12px; font-weight: 600; text-decoration: none; }
+.toolbar-back:hover { color: var(--blue); }
+.toolbar-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.button {
+  display: inline-flex; align-items: center; gap: 12px;
+  min-height: 44px; padding: 0 18px;
+  border: 1px solid var(--ink); background: transparent; color: var(--ink);
+  font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  text-decoration: none; cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.button:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--orange); }
+.button-primary { background: var(--ink); color: var(--white); }
+.button-quiet { background: var(--white); }
+
+/* ---------- sheet ---------- */
+.sheet {
+  max-width: 940px; margin: 0 auto;
+  padding: 56px 60px 44px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(16, 24, 32, .12);
+}
+
+.masthead {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 40px; flex-wrap: wrap;
+  padding-bottom: 22px; border-bottom: 3px solid var(--line-strong);
+}
+.masthead h1 {
+  margin: 0; font-size: clamp(38px, 5vw, 54px);
+  line-height: 1; letter-spacing: -.045em; font-weight: 800;
+}
+.masthead .title {
+  margin-top: 10px; max-width: 46ch;
+  color: var(--ink-soft); font-size: 16px; line-height: 1.4;
+}
+.contact-block {
+  margin: 0; padding: 0; list-style: none; text-align: right;
+  font-family: var(--mono); font-size: 12px; line-height: 1.9; color: var(--muted);
+}
+.contact-block a { text-decoration: none; }
+.contact-block a:hover { color: var(--blue); text-decoration: underline; }
+
+.summary { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.summary p { max-width: 92ch; color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
+.summary em { font-style: italic; }
+
+.columns {
+  display: grid; grid-template-columns: 1.62fr 1fr; gap: 46px;
+  padding-top: 30px;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--mint-deep);
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.col-main section + section { margin-top: 34px; }
+.col-side section + section { margin-top: 30px; }
+
+/* ---------- roles ---------- */
+.role, .product { margin-bottom: 22px; break-inside: avoid; }
+.role:last-child, .product:last-child { margin-bottom: 0; }
+.role-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 16px; flex-wrap: wrap;
+}
+.role-head h3 { margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
+.role-when { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; }
+.role-org { margin-top: 2px; color: var(--blue); font-size: 13px; font-weight: 600; }
+.role ul { margin: 10px 0 0; padding: 0; list-style: none; }
+.role li {
+  position: relative; padding-left: 16px; margin-bottom: 6px;
+  color: var(--ink-soft); font-size: 14px; line-height: 1.5;
+}
+.role li::before {
+  content: ""; position: absolute; left: 0; top: .6em;
+  width: 7px; height: 1px; background: var(--orange);
+}
+.role li strong { font-weight: 700; }
+
+/* ---------- products ---------- */
+.product > p { margin-top: 8px; color: var(--ink-soft); font-size: 14px; line-height: 1.55; }
+.metrics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.metrics span {
+  padding: 5px 8px; border: 1px solid var(--line);
+  font-family: var(--mono); font-size: 10.5px; color: var(--muted);
+}
+
+/* ---------- sidebar ---------- */
+.skill-group { margin-bottom: 14px; }
+.skill-group h4 {
+  margin: 0 0 3px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ink);
+}
+.skill-group p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+.edu-school { font-size: 15px; font-weight: 800; letter-spacing: -.01em; }
+.edu-degree { margin-top: 3px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+.wins { margin: 0; padding: 0; list-style: none; }
+.wins li {
+  position: relative; padding-left: 16px; margin-bottom: 8px;
+  color: var(--muted); font-size: 13px; line-height: 1.5;
+}
+.wins li::before {
+  content: ""; position: absolute; left: 0; top: .6em;
+  width: 7px; height: 1px; background: var(--orange);
+}
+.wins strong { color: var(--ink); font-weight: 700; }
+
+.vol { margin-bottom: 12px; }
+.vol-org { font-size: 13.5px; font-weight: 700; }
+.vol-org span { float: right; font-family: var(--mono); font-size: 10.5px; font-weight: 500; color: var(--muted); }
+.vol p:not(.vol-org) { margin-top: 3px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+.sheet-footer {
+  display: flex; justify-content: space-between; gap: 16px;
+  margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 820px) {
+  .sheet { padding: 36px 26px 32px; }
+  .columns { grid-template-columns: 1fr; gap: 34px; }
+  .masthead { align-items: flex-start; }
+  .contact-block { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .button:hover { transform: none; }
+}
+
+/* ============================================================
+   Print — target: two pages, letter, 0.5in margins.
+   ============================================================ */
+@media print {
+  @page { size: letter; margin: 0.5in; }
+
+  html, body { background: #fff; }
+  body { padding: 0; font-size: 10pt; color: #000; }
+  .no-print, .skip-link { display: none !important; }
+
+  .sheet {
+    max-width: none; margin: 0; padding: 0;
+    border: 0; box-shadow: none;
+  }
+
+  .masthead { padding-bottom: 10pt; border-bottom-width: 2pt; }
+  .masthead h1 { font-size: 26pt; }
+  .masthead .title { margin-top: 5pt; font-size: 10.5pt; color: #222; }
+  .contact-block { font-size: 8.5pt; line-height: 1.55; color: #333; }
+  .contact-block a { text-decoration: none; color: #000; }
+
+  .summary { padding: 8pt 0; }
+  .summary p { font-size: 9.5pt; line-height: 1.4; color: #1a1a1a; }
+
+  /* Single flow in print: grid fragmentation across pages is unreliable,
+     and a linear order reads correctly in ATS text extraction. */
+  .columns { display: block; padding-top: 12pt; }
+  /* Sidebar flows as two balanced text columns once it is full width —
+     multicol paginates reliably where grid does not. */
+  .col-side { margin-top: 14pt; column-count: 2; column-gap: 24pt; }
+  h2 { font-size: 8.5pt; letter-spacing: .14em; color: #000; margin-bottom: 8pt; padding-bottom: 4pt; }
+
+  .col-main section + section { margin-top: 12pt; }
+  .col-side section + section { margin-top: 12pt; }
+  .col-side section { break-inside: avoid; page-break-inside: avoid; }
+
+  /* Sidebar reads better as columns when it is full width */
+  .col-side section > div:not(:last-child) { margin-bottom: 6pt; }
+
+  .role, .product { margin-bottom: 9pt; break-inside: avoid; page-break-inside: avoid; }
+  .role-head h3 { font-size: 10.5pt; }
+  .role-when { font-size: 8.5pt; color: #444; }
+  .role-org { font-size: 9pt; color: #000; }
+  .role ul { margin-top: 4pt; }
+  .role li { font-size: 9pt; line-height: 1.36; margin-bottom: 2.5pt; color: #1a1a1a; }
+  .role li::before { background: #000; }
+
+  .product > p { font-size: 9pt; line-height: 1.36; color: #1a1a1a; }
+  .metrics { gap: 4pt; margin-top: 5pt; }
+  .metrics span { padding: 2pt 4pt; font-size: 8pt; color: #333; border-color: #bbb; }
+
+  .skill-group { margin-bottom: 8pt; }
+  .skill-group h4 { font-size: 8.5pt; }
+  .skill-group p { font-size: 9pt; line-height: 1.4; color: #1a1a1a; }
+  .edu-school { font-size: 10pt; }
+  .edu-degree { font-size: 9pt; color: #1a1a1a; }
+  .wins li, .vol p:not(.vol-org) { font-size: 9pt; line-height: 1.4; color: #1a1a1a; }
+  .wins li::before { background: #000; }
+  .vol-org { font-size: 9.5pt; }
+  .vol-org span { font-size: 8pt; color: #444; }
+
+  .sheet-footer { display: none; }
+}
